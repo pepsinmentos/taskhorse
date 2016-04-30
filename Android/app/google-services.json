@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "883272592874",
+    "project_id": "questboard-bcaf3"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:883272592874:android:526c81b039f49eac",
+        "android_client_info": {
+          "package_name": "com.piwi.taskhorseapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "883272592874-u5vs7b4fdpudiku5pofnuov2rdv7bp2s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.piwi.taskhorseapp",
+            "certificate_hash": "A3988A0271279245FC5055287964A1E2E76BB436"
+          }
+        },
+        {
+          "client_id": "883272592874-52edsq5410huobm2k1g8agnr627iq7i1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOPeTRZY2OdJhtmhHFQS5h4N4VEJEo5xw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

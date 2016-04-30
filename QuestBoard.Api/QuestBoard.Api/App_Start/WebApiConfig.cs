@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Web.Http;
+using Autofac;
+using Autofac.Integration.WebApi;
+using QuestBoard.Api.Controllers;
+using QuestBoard.Api.Repositories;
+using QuestBoard.Api.Services;
 
 namespace QuestBoard.Api
 {
@@ -21,6 +26,13 @@ namespace QuestBoard.Api
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            var builder = new ContainerBuilder();
+            builder.RegisterModule(new _ControllersModule());
+            builder.RegisterModule(new _RepositoriesModule());
+            builder.RegisterModule(new _ServicesModule());
+            IContainer container = builder.Build();
+            config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
         }
     }
 }

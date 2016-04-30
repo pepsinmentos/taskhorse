@@ -43,3 +43,4 @@ Thumbs.db
 packages
 /QuestBoard.Api/QuestBoard.Api/bin
 obj
+/QuestBoard.Api/QuestBoard.Api.Tests/bin/Debug
