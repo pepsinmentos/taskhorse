@@ -38,8 +38,8 @@ Thumbs.db
 
 # Folders #
 ######################
-/bin/*
-/obj/*
+*/bin
+*/obj
 packages
 /QuestBoard.Api/QuestBoard.Api/bin
 obj
