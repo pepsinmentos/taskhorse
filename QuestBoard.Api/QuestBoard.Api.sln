@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestBoard.Api", "QuestBoard.Api\QuestBoard.Api.csproj", "{5A2A0E6F-75AC-4B1D-A3FB-906772145DE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestBoard.Api.Tests", "QuestBoard.Api.Tests\QuestBoard.Api.Tests.csproj", "{0DEAF823-1356-48F1-BE99-2FA4E8005683}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A2A0E6F-75AC-4B1D-A3FB-906772145DE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A2A0E6F-75AC-4B1D-A3FB-906772145DE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A2A0E6F-75AC-4B1D-A3FB-906772145DE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A2A0E6F-75AC-4B1D-A3FB-906772145DE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DEAF823-1356-48F1-BE99-2FA4E8005683}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DEAF823-1356-48F1-BE99-2FA4E8005683}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DEAF823-1356-48F1-BE99-2FA4E8005683}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DEAF823-1356-48F1-BE99-2FA4E8005683}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
