@@ -5,9 +5,8 @@ using System.Web;
 
 namespace QuestBoard.Api.Models
 {
-    public class AuthenticationResult
+    public class TokenResult : ApiResult
     {
-        public bool IsAuthenticated { get; set; }
         public string Token { get; set; }
         public int ExpiresIn { get; set; }
     }

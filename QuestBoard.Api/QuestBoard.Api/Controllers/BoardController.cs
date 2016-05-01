@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using QuestBoard.Api.Filters;
 using QuestBoard.Api.Models;
 using QuestBoard.Api.Services;
 
 namespace QuestBoard.Api.Controllers
 {
+    /*[AuthenticateFilter] - This is registered by Autofac in the _FilterModule */
     public class BoardController : ApiController
     {
         private readonly IBoardService _boardService;

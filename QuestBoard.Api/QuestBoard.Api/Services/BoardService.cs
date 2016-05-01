@@ -37,7 +37,8 @@ namespace QuestBoard.Api.Services
         {
 
             var board = _boardRepository.Get(id);
-            board.Quests = _questRepository.AllForBoard(board.Id);
+            if(board != null)
+                board.Quests = _questRepository.AllForBoard(board.Id);
             return board;
         }
 

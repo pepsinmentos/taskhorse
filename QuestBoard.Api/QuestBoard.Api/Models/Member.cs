@@ -11,6 +11,13 @@ namespace QuestBoard.Api.Models
         public string Username { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
+        public string SignUpSource { get; set; }
         public DateTime CreatedOn { get; set; }
+
+        public Member()
+        {
+            Id = Guid.NewGuid().ToString();
+            CreatedOn = DateTime.Now;
+        }
     }
 }

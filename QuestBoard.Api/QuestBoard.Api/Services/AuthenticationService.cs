@@ -9,12 +9,13 @@ namespace QuestBoard.Api.Services
 {
     public class AuthenticationService : IAuthenticationService
     {
-        private readonly IAuthenticationRepository _signUpRepository;
+        private readonly IAuthenticationRepository _authenticationRepository;
         private readonly IMemberRepository _memberRepository;
+        private const int EXPIRES_IN = 86400;
 
-        public AuthenticationService(IAuthenticationRepository signUpRepository, IMemberRepository memberRepository)
+        public AuthenticationService(IAuthenticationRepository authenticationRepository, IMemberRepository memberRepository)
         {
-            _signUpRepository = signUpRepository;
+            _authenticationRepository = authenticationRepository;
             _memberRepository = memberRepository;
         }
 
@@ -23,12 +24,25 @@ namespace QuestBoard.Api.Services
             if (_memberRepository.GetByEmail(signUp.Email) == null)
                 throw new Exception("Member already exists for Email: " + signUp.Email);
 
-            _signUpRepository.Create(signUp);
+            _authenticationRepository.Create(signUp);
         }
 
-        public AuthenticationResult Authenticate(Authentication auth)
+        public AuthenticationResult Authenticate(AuthenticationRequest auth)
         {
-            throw new NotImplementedException();
+            if (_authenticationRepository.IsValidUser(auth))
+            {
+                string token = Guid.NewGuid().ToString();
+                _authenticationRepository.SaveToken(token, EXPIRES_IN);
+
+                return new AuthenticationResult { ExpiresIn = EXPIRES_IN, Token = token, IsAuthenticated = true };
+            }
+            else
+                return new AuthenticationResult { IsAuthenticated = false };
+        }
+
+        public bool IsTokenValid(string token)
+        {
+            return _authenticationRepository.IsValidToken(token);
         }
     }
 }

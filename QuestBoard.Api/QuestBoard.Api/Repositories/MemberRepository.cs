@@ -38,6 +38,11 @@ namespace QuestBoard.Api.Repositories
             throw new NotImplementedException();
         }
 
-        
+
+        public Member Create(Member model)
+        {
+            Collection.InsertOne(model);
+            return model;
+        }
     }
 }

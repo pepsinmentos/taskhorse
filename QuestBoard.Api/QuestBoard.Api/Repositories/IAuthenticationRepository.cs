@@ -10,6 +10,8 @@ namespace QuestBoard.Api.Repositories
     public interface IAuthenticationRepository
     {
         void Create(SignUp signUp);
-        void SaveToken(string token);
+        void SaveToken(string token, int expiresInSeconds);
+        bool IsValidUser(AuthenticationRequest auth);
+        bool IsValidToken(string token);
     }
 }
