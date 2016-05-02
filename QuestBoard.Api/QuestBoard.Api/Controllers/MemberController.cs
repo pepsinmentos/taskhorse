@@ -13,12 +13,6 @@ namespace QuestBoard.Api.Controllers
         {
             
         }
-
-        [HttpPost]
-        public ApiResult Post(SignUp signUp)
-        {
-            return new ApiResult();
-        }
-
+        
     }
 }

@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using System.Web;
 using Autofac;
 using Autofac.Integration.WebApi;
-using Module = Autofac.Module;
+using QuestBoard.Api.Controllers;
 
-namespace QuestBoard.Api.Controllers
+namespace QuestBoard.Api.Filters
 {
-    public class _ControllersModule : Module
+    public class _FilterModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+            builder.RegisterType<AuthenticateFilter>().AsWebApiActionFilterFor<BoardController>().SingleInstance();
             base.Load(builder);
         }
     }

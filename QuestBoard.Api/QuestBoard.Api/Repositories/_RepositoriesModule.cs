@@ -14,6 +14,9 @@ namespace QuestBoard.Api.Repositories
         {
             builder.RegisterType<BoardRepository>().As<IBoardRepository>();
             builder.RegisterType<QuestRepository>().As<IQuestRepository>();
+            builder.RegisterType<MemberRepository>().As<IMemberRepository>();
+            builder.RegisterType<AuthenticationRepository>().As<IAuthenticationRepository>();
+
             builder.Register((c) => new MongoClient(WebConfigurationManager.AppSettings["MongoConnectionString"])).As<MongoClient>().SingleInstance();
 
             base.Load(builder);

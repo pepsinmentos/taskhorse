@@ -97,6 +97,10 @@
       <HintPath>..\packages\MongoDB.Driver.Core.2.2.3\lib\net45\MongoDB.Driver.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.3.3\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -167,6 +171,7 @@
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs" />
     <Compile Include="Controllers\BoardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
@@ -174,6 +179,9 @@
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\_ControllersModule.cs" />
     <Compile Include="Enums\QuestType.cs" />
+    <Compile Include="Exceptions\MemberAlreadyExistsException.cs" />
+    <Compile Include="Filters\AuthenticateFilter.cs" />
+    <Compile Include="Filters\_FilterModule.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -185,6 +193,7 @@
     <Compile Include="Models\Quest.cs" />
     <Compile Include="Models\Board.cs" />
     <Compile Include="Models\SignUp.cs" />
+    <Compile Include="Models\TokenResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BoardRepository.cs" />
     <Compile Include="Repositories\IBoardRepository.cs" />
@@ -199,10 +208,12 @@
     <Compile Include="Services\IBoardService.cs" />
     <Compile Include="Interfaces\ICreate.cs" />
     <Compile Include="Interfaces\IDelete.cs" />
+    <Compile Include="Services\IMemberService.cs" />
     <Compile Include="Services\IQuestService.cs" />
     <Compile Include="Interfaces\IRead.cs" />
     <Compile Include="Services\BoardService.cs" />
     <Compile Include="Services\IAuthenticationService.cs" />
+    <Compile Include="Services\MemberService.cs" />
     <Compile Include="Services\QuestService.cs" />
     <Compile Include="Services\AuthenticationService.cs" />
     <Compile Include="Services\_ServicesModule.cs" />
@@ -224,6 +235,12 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <PropertyGroup>

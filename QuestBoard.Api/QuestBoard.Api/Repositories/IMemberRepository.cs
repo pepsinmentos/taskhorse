@@ -8,7 +8,7 @@ using QuestBoard.Api.Models;
 
 namespace QuestBoard.Api.Repositories
 {
-    public interface IMemberRepository : IRead<Member>, IDelete<Member>
+    public interface IMemberRepository : IRead<Member>, IDelete<Member>, ICreate<Member>
     {
         Member GetByEmail(string emailAddress);
     }

@@ -6,6 +6,7 @@ using System.Web.Http;
 using Autofac;
 using Autofac.Integration.WebApi;
 using QuestBoard.Api.Controllers;
+using QuestBoard.Api.Filters;
 using QuestBoard.Api.Repositories;
 using QuestBoard.Api.Services;
 
@@ -31,6 +32,8 @@ namespace QuestBoard.Api
             builder.RegisterModule(new _ControllersModule());
             builder.RegisterModule(new _RepositoriesModule());
             builder.RegisterModule(new _ServicesModule());
+            builder.RegisterModule(new _FilterModule());
+            builder.RegisterWebApiFilterProvider(config);
             IContainer container = builder.Build();
             config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
         }

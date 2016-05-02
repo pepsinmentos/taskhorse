@@ -5,7 +5,7 @@ using System.Web;
 
 namespace QuestBoard.Api.Models
 {
-    public class Authentication
+    public class AuthenticationRequest
     {
         public string Email { get; set; }
         public string Password { get; set; }
