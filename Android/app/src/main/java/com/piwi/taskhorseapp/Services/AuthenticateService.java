@@ -28,6 +28,7 @@ public class AuthenticateService {
 
     public TokenResult authenticate(AuthenticationRequest authenticationRequest)
     {
+
         if(storedToken == null || tokenExpiry.before(new Date())) {
             storedToken = _authenticateRestClient.authenticate(authenticationRequest);
             tokenExpiry = new Date( System.currentTimeMillis() + storedToken.ExpiresIn * 1000);

@@ -2,6 +2,7 @@ package com.piwi.taskhorseapp.Rest;
 
 import com.piwi.taskhorseapp.Logging.ILogger;
 import com.piwi.taskhorseapp.Models.AuthenticationRequest;
+import com.piwi.taskhorseapp.Models.Board;
 import com.piwi.taskhorseapp.Models.SignUp;
 import com.piwi.taskhorseapp.Models.TokenResult;
 

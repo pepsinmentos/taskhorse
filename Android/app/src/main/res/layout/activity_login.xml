@@ -10,6 +10,11 @@
     android:orientation="vertical"
     tools:context="com.piwi.taskhorseapp.LoginActivity">
 
+    <LinearLayout
+        android:id="@+id/login_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,16 +22,19 @@
         android:layout_marginBottom="15dp"/>
 
     <EditText
+        android:id="@+id/login_email"
         style="@style/InputEditText"
         android:hint="Email"
         />
 
     <EditText
+        android:id="@+id/login_password"
         style="@style/InputEditText"
         android:hint="Password"
         />
 
     <Button
+        android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Log in!"
@@ -34,26 +42,49 @@
         />
 
     <com.google.android.gms.common.SignInButton
-        android:id="@+id/sign_in_button"
+        android:id="@+id/google_sign_in_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <EditText
-        android:id="@+id/status_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Sign in with Facebook!"
-        />
-
-    <Button
+        android:id="@+id/signup_load_form_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Sign up for a new account"
         />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/signup_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="invisible">
+        <EditText
+            android:id="@+id/signup_email"
+            style="@style/InputEditText"
+            android:hint="Email"
+            />
+
+        <EditText
+            android:id="@+id/signup_password"
+            style="@style/InputEditText"
+            android:hint="Password"
+            />
+        <EditText
+            android:id="@+id/signup_username"
+            style="@style/InputEditText"
+            android:hint="Username"
+            />
+
+        <Button
+            android:id="@+id/signup_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Sign up!"
+            android:visibility="visible"
+            />
+    </LinearLayout>
 </LinearLayout>

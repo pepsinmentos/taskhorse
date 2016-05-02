@@ -86,6 +86,7 @@ public class RestClient {
 
     public RestResponse doCall()
     {
+
         RestResponse restResponse = new RestResponse();
         HttpURLConnection connection = null;
 
@@ -94,8 +95,11 @@ public class RestClient {
             URL url = new URL(requestUrl);
             Gson g = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ss").create();
             connection = (HttpURLConnection) url.openConnection();
+            connection.setConnectTimeout(10000);
+            connection.setReadTimeout(10000);
             connection.setRequestProperty("Content-Type", "application/json");
             connection.setRequestProperty("Accept", "application/json");
+            //connection.setRequestProperty("User-Agent","Mozilla/5.0 ( compatible ) ");
             //connection.setRequestProperty("Authorization","Bearer 45e29fb5-bf85-4e79-b087-dd5e0648f0ba");
             if(headers != null && !headers.isEmpty())
             {
